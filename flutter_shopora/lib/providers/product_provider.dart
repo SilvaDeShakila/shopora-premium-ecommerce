@@ -85,7 +85,6 @@ class ProductProvider with ChangeNotifier {
         list.sort((a, b) => b.rating.rate.compareTo(a.rating.rate));
         break;
       case ProductSortOption.featured:
-      default:
         // Keep original API sequence
         break;
     }

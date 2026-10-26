@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/theme_provider.dart';
 import '../../core/utils/formatters.dart';
@@ -52,13 +52,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             decoration: BoxDecoration(
               color: theme.cardTheme.color,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: theme.colorScheme.outline.withOpacity(0.5)),
+              border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.5)),
             ),
             child: Row(
               children: [
                 CircleAvatar(
                   radius: 28,
-                  backgroundColor: theme.colorScheme.primary.withOpacity(0.15),
+                  backgroundColor: theme.colorScheme.primary.withValues(alpha: 0.15),
                   child: Text(
                     'AM',
                     style: TextStyle(
@@ -80,11 +80,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const SizedBox(height: 2),
                       Text(
                         'alex.morgan@example.com',
-                        style: TextStyle(fontSize: 13, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+                        style: TextStyle(fontSize: 13, color: theme.colorScheme.onSurface.withValues(alpha: 0.6)),
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'Shopora Member Â· Internship Demo',
+                        'Shopora Member · Internship Demo',
                         style: TextStyle(fontSize: 11, color: theme.colorScheme.primary, fontWeight: FontWeight.w600),
                       ),
                     ],
@@ -103,7 +103,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             decoration: BoxDecoration(
               color: theme.cardTheme.color,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: theme.colorScheme.outline.withOpacity(0.5)),
+              border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.5)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,7 +152,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             decoration: BoxDecoration(
               color: theme.cardTheme.color,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: theme.colorScheme.outline.withOpacity(0.5)),
+              border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.5)),
             ),
             child: Column(
               children: [
@@ -163,12 +163,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   subtitle: const Text('Forces fresh fetch of products and categories'),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () async {
-                    ScaffoldMessenger.of(context).showSnackBar(
+                    final messenger = ScaffoldMessenger.of(context);
+                    messenger.showSnackBar(
                       const SnackBar(content: Text('Refreshing product catalog...'), duration: Duration(seconds: 1)),
                     );
                     await productProvider.loadInitialData(forceRefresh: true);
                     if (mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
+                      messenger.showSnackBar(
                         const SnackBar(content: Text('Product catalog updated!')),
                       );
                     }
@@ -200,13 +201,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       decoration: BoxDecoration(
                         color: theme.cardTheme.color,
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: theme.colorScheme.outline.withOpacity(0.5)),
+                        border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.5)),
                       ),
                       child: Center(
                         child: Text(
                           'No orders placed yet. Add items to cart and try the simulated checkout demo!',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 13, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+                          style: TextStyle(fontSize: 13, color: theme.colorScheme.onSurface.withValues(alpha: 0.6)),
                         ),
                       ),
                     )
@@ -218,7 +219,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           decoration: BoxDecoration(
                             color: theme.cardTheme.color,
                             borderRadius: BorderRadius.circular(14),
-                            border: Border.all(color: theme.colorScheme.outline.withOpacity(0.5)),
+                            border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.5)),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -238,8 +239,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                '${order.items.length} items Â· ${Formatters.formatDate(order.orderDate)}',
-                                style: TextStyle(fontSize: 12, color: theme.colorScheme.onSurface.withOpacity(0.6)),
+                                '${order.items.length} items · ${Formatters.formatDate(order.orderDate)}',
+                                style: TextStyle(fontSize: 12, color: theme.colorScheme.onSurface.withValues(alpha: 0.6)),
                               ),
                             ],
                           ),

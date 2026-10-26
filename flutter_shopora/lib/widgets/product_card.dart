@@ -1,4 +1,4 @@
-﻿import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../core/utils/formatters.dart';
@@ -37,12 +37,12 @@ class ProductCard extends StatelessWidget {
           color: theme.cardTheme.color,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: theme.colorScheme.outline.withOpacity(isDark ? 0.4 : 0.8),
+            color: theme.colorScheme.outline.withValues(alpha: isDark ? 0.4 : 0.8),
             width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(isDark ? 0.25 : 0.03),
+              color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.03),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -80,7 +80,7 @@ class ProductCard extends StatelessWidget {
                           errorWidget: (context, url, error) => Center(
                             child: Icon(
                               Icons.image_not_supported_outlined,
-                              color: theme.colorScheme.onSurface.withOpacity(0.3),
+                              color: theme.colorScheme.onSurface.withValues(alpha: 0.3),
                               size: 32,
                             ),
                           ),
@@ -105,7 +105,7 @@ class ProductCard extends StatelessWidget {
                           padding: const EdgeInsets.all(6),
                           child: Icon(
                             isFav ? Icons.favorite : Icons.favorite_border,
-                            color: isFav ? Colors.redAccent : theme.colorScheme.onSurface.withOpacity(0.6),
+                            color: isFav ? Colors.redAccent : theme.colorScheme.onSurface.withValues(alpha: 0.6),
                             size: 18,
                           ),
                         ),
@@ -181,7 +181,7 @@ class ProductCard extends StatelessWidget {
                                     '${product.rating.rate.toStringAsFixed(1)} (${product.rating.count})',
                                     style: TextStyle(
                                       fontSize: 10,
-                                      color: theme.colorScheme.onSurface.withOpacity(0.55),
+                                      color: theme.colorScheme.onSurface.withValues(alpha: 0.55),
                                     ),
                                   ),
                                 ],

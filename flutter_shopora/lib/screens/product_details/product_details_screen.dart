@@ -82,7 +82,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     errorWidget: (context, url, error) => Icon(
                       Icons.image_not_supported_outlined,
                       size: 64,
-                      color: theme.colorScheme.onSurface.withOpacity(0.3),
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.3),
                     ),
                   ),
                 ),
@@ -117,7 +117,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
-                                color: theme.colorScheme.onSurface.withOpacity(0.7),
+                                color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                               ),
                             ),
                           ],
@@ -149,7 +149,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   const SizedBox(height: 20),
 
                   // Divider
-                  Divider(color: theme.colorScheme.outline.withOpacity(0.3)),
+                  Divider(color: theme.colorScheme.outline.withValues(alpha: 0.3)),
                   const SizedBox(height: 16),
 
                   // Description Title & Body
@@ -163,7 +163,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     style: TextStyle(
                       fontSize: 14,
                       height: 1.6,
-                      color: theme.colorScheme.onSurface.withOpacity(0.75),
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -178,7 +178,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       const SizedBox(width: 16),
                       Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: theme.colorScheme.outline.withOpacity(0.6)),
+                          border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.6)),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -212,7 +212,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
                   // Related Products Section
                   if (relatedProducts.isNotEmpty) ...[
-                    Divider(color: theme.colorScheme.outline.withOpacity(0.3)),
+                    Divider(color: theme.colorScheme.outline.withValues(alpha: 0.3)),
                     const SizedBox(height: 16),
                     Text(
                       'More in ${Formatters.capitalizeCategory(widget.product.category)}',
@@ -247,7 +247,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         decoration: BoxDecoration(
           color: theme.scaffoldBackgroundColor,
-          border: Border(top: BorderSide(color: theme.colorScheme.outline.withOpacity(0.3))),
+          border: Border(top: BorderSide(color: theme.colorScheme.outline.withValues(alpha: 0.3))),
         ),
         child: SafeArea(
           child: Row(

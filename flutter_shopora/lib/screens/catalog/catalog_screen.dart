@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/utils/formatters.dart';
-import '../../models/product.dart';
 import '../../providers/product_provider.dart';
 import '../../widgets/category_chip.dart';
 import '../../widgets/empty_state.dart';
@@ -44,7 +43,6 @@ class _CatalogScreenState extends State<CatalogScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
     final productProvider = context.watch<ProductProvider>();
 
     return Scaffold(
@@ -146,7 +144,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
-                    color: theme.colorScheme.onSurface.withOpacity(0.7),
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                   ),
                 ),
                 InkWell(
@@ -223,7 +221,6 @@ class _CatalogScreenState extends State<CatalogScreen> {
       case ProductSortOption.rating:
         return 'Customer Rating';
       case ProductSortOption.featured:
-      default:
         return 'Featured';
     }
   }
@@ -273,7 +270,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: theme.colorScheme.onSurface.withOpacity(0.2),
+                color: theme.colorScheme.onSurface.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -356,7 +353,6 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   }
 
   Widget _sortChip(String label, ProductSortOption option) {
-    final theme = Theme.of(context);
     final isSelected = _tempSort == option;
     return ChoiceChip(
       label: Text(label),

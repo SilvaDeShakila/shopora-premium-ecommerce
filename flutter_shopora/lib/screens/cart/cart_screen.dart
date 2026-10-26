@@ -78,7 +78,7 @@ class CartScreen extends StatelessWidget {
                           color: theme.cardTheme.color,
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(
-                            color: theme.colorScheme.outline.withOpacity(0.5),
+                            color: theme.colorScheme.outline.withValues(alpha: 0.5),
                           ),
                         ),
                         child: Row(
@@ -142,7 +142,7 @@ class CartScreen extends StatelessWidget {
                                     Formatters.formatCurrency(item.product.price),
                                     style: TextStyle(
                                       fontSize: 12,
-                                      color: theme.colorScheme.onSurface.withOpacity(0.6),
+                                      color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                                     ),
                                   ),
                                   const SizedBox(height: 8),
@@ -153,7 +153,7 @@ class CartScreen extends StatelessWidget {
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
-                                          border: Border.all(color: theme.colorScheme.outline.withOpacity(0.4)),
+                                          border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.4)),
                                           borderRadius: BorderRadius.circular(8),
                                         ),
                                         child: Row(
@@ -211,12 +211,12 @@ class CartScreen extends StatelessWidget {
                     borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 10,
                         offset: const Offset(0, -4),
                       ),
                     ],
-                    border: Border(top: BorderSide(color: theme.colorScheme.outline.withOpacity(0.4))),
+                    border: Border(top: BorderSide(color: theme.colorScheme.outline.withValues(alpha: 0.4))),
                   ),
                   child: SafeArea(
                     child: Column(
@@ -233,7 +233,7 @@ class CartScreen extends StatelessWidget {
                           isHighlight: cartProvider.estimatedShipping == 0,
                         ),
                         const SizedBox(height: 10),
-                        Divider(color: theme.colorScheme.outline.withOpacity(0.4)),
+                        Divider(color: theme.colorScheme.outline.withValues(alpha: 0.4)),
                         const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -282,7 +282,7 @@ class CartScreen extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: 13,
-            color: theme.colorScheme.onSurface.withOpacity(0.65),
+            color: theme.colorScheme.onSurface.withValues(alpha: 0.65),
           ),
         ),
         Text(

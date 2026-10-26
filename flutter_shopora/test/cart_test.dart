@@ -55,7 +55,7 @@ void main() {
       expect(totalQuantity, equals(5));
     });
 
-    test('Shipping is free over \ and applies below threshold', () {
+    test('Shipping is free over the threshold and applies below it', () {
       double calculateShipping(double subtotal) {
         if (subtotal == 0) return 0.0;
         return subtotal > 75.0 ? 0.0 : 9.99;

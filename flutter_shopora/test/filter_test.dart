@@ -43,7 +43,7 @@ void main() {
     ];
 
     test('Case-insensitive search in title and description', () {
-      final query = 'casual';
+      const query = 'casual';
       final matches = sampleCatalog.where((p) {
         return p.title.toLowerCase().contains(query) ||
             p.description.toLowerCase().contains(query);
@@ -60,8 +60,8 @@ void main() {
     });
 
     test('Filter by price range boundaries', () {
-      final min = 20.0;
-      final max = 100.0;
+      const min = 20.0;
+      const max = 100.0;
       final inRange = sampleCatalog.where((p) => p.price >= min && p.price <= max).toList();
 
       expect(inRange.length, equals(2));

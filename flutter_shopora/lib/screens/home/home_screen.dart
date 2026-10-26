@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/theme_provider.dart';
 import '../../providers/cart_provider.dart';
@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   subtitle,
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurface.withOpacity(0.58),
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.58),
                   ),
                 ),
               ],
@@ -208,7 +208,7 @@ class HomeScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(16),
                                 border: Border.all(
                                   color: theme.colorScheme.outline
-                                      .withOpacity(0.18),
+                                      .withValues(alpha: 0.18),
                                 ),
                               ),
                               child: Row(
@@ -225,14 +225,14 @@ class HomeScreen extends StatelessWidget {
                                       style:
                                           theme.textTheme.bodyMedium?.copyWith(
                                         color: theme.colorScheme.onSurface
-                                            .withOpacity(0.55),
+                                            .withValues(alpha: 0.55),
                                       ),
                                     ),
                                   ),
                                   Icon(
                                     Icons.tune_rounded,
                                     color: theme.colorScheme.onSurface
-                                        .withOpacity(0.6),
+                                        .withValues(alpha: 0.6),
                                   ),
                                 ],
                               ),
@@ -262,7 +262,7 @@ class HomeScreen extends StatelessWidget {
                               boxShadow: [
                                 BoxShadow(
                                   color: const Color(0xFF7255E8)
-                                      .withOpacity(0.25),
+                                      .withValues(alpha: 0.25),
                                   blurRadius: 22,
                                   offset: const Offset(0, 10),
                                 ),
@@ -278,7 +278,7 @@ class HomeScreen extends StatelessWidget {
                                     height: 190,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: Colors.white.withOpacity(0.08),
+                                      color: Colors.white.withValues(alpha: 0.08),
                                     ),
                                   ),
                                 ),
@@ -291,7 +291,7 @@ class HomeScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       border: Border.all(
-                                        color: Colors.white.withOpacity(0.13),
+                                        color: Colors.white.withValues(alpha: 0.13),
                                         width: 25,
                                       ),
                                     ),
@@ -317,7 +317,7 @@ class HomeScreen extends StatelessWidget {
                                               ),
                                               decoration: BoxDecoration(
                                                 color: Colors.white
-                                                    .withOpacity(0.16),
+                                                    .withValues(alpha: 0.16),
                                                 borderRadius:
                                                     BorderRadius.circular(30),
                                               ),
@@ -347,7 +347,7 @@ class HomeScreen extends StatelessWidget {
                                               'Find something you will love.',
                                               style: TextStyle(
                                                 color: Colors.white
-                                                    .withOpacity(0.8),
+                                                    .withValues(alpha: 0.8),
                                                 fontSize: 11,
                                               ),
                                             ),
@@ -480,7 +480,7 @@ class HomeScreen extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     color: selected
                                         ? theme.colorScheme.primary
-                                            .withOpacity(0.13)
+                                            .withValues(alpha: 0.13)
                                         : (isDark
                                             ? const Color(0xFF20283A)
                                             : const Color(0xFFF5F5FA)),
@@ -489,7 +489,7 @@ class HomeScreen extends StatelessWidget {
                                       color: selected
                                           ? theme.colorScheme.primary
                                           : theme.colorScheme.outline
-                                              .withOpacity(0.15),
+                                              .withValues(alpha: 0.15),
                                     ),
                                   ),
                                   child: Column(
@@ -570,7 +570,7 @@ class HomeScreen extends StatelessWidget {
                                   Icons.search_off_rounded,
                                   size: 48,
                                   color: theme.colorScheme.onSurface
-                                      .withOpacity(0.4),
+                                      .withValues(alpha: 0.4),
                                 ),
                                 const SizedBox(height: 6),
                                 const Text('No products found in this view.'),
@@ -621,10 +621,10 @@ class HomeScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 13),
       decoration: BoxDecoration(
-        color: theme.colorScheme.primary.withOpacity(0.07),
+        color: theme.colorScheme.primary.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: theme.colorScheme.primary.withOpacity(0.12),
+          color: theme.colorScheme.primary.withValues(alpha: 0.12),
         ),
       ),
       child: Row(
@@ -650,7 +650,7 @@ class HomeScreen extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontSize: 9,
-                    color: theme.colorScheme.onSurface.withOpacity(0.6),
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                   ),
                 ),
               ],

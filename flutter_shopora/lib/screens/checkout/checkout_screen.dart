@@ -83,7 +83,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: theme.colorScheme.primary.withOpacity(0.08),
+                color: theme.colorScheme.primary.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
@@ -111,7 +111,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const SizedBox(height: 12),
             Text(
               'Note: This is a demo simulation for the internship assignment. No real payment was charged.',
-              style: TextStyle(fontSize: 11, color: theme.colorScheme.onSurface.withOpacity(0.6), fontStyle: FontStyle.italic),
+              style: TextStyle(fontSize: 11, color: theme.colorScheme.onSurface.withValues(alpha: 0.6), fontStyle: FontStyle.italic),
             ),
           ],
         ),
@@ -148,9 +148,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.amber.withOpacity(0.12),
+                  color: Colors.amber.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.amber.withOpacity(0.4)),
+                  border: Border.all(color: Colors.amber.withValues(alpha: 0.4)),
                 ),
                 child: Row(
                   children: [
@@ -159,7 +159,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Expanded(
                       child: Text(
                         'Assignment Demo: Form validation and order generation are live. Real payment data is never collected.',
-                        style: TextStyle(fontSize: 12, color: theme.colorScheme.onSurface.withOpacity(0.85)),
+                        style: TextStyle(fontSize: 12, color: theme.colorScheme.onSurface.withValues(alpha: 0.85)),
                       ),
                     ),
                   ],
@@ -239,7 +239,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 decoration: BoxDecoration(
                   color: theme.cardTheme.color,
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: theme.colorScheme.outline.withOpacity(0.5)),
+                  border: Border.all(color: theme.colorScheme.outline.withValues(alpha: 0.5)),
                 ),
                 child: Column(
                   children: [
