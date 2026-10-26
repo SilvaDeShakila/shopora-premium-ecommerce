@@ -1,123 +1,163 @@
-# Shopora - Premium Flutter E-Commerce Shopping App
-**Task 05 (Advanced) – Internship Assignment Submission**
+﻿# Shopora — Premium Flutter E-Commerce App
 
-Shopora is a production-quality, modern cross-platform shopping application built with **Flutter** and **Dart**, powered by live REST data from [Fake Store API](https://fakestoreapi.com/).
+A modern shopping experience built with Flutter, featuring product discovery, category browsing, search, filters, wishlists, a persistent cart, and light/dark themes.
 
----
+**Auspify Internship — Task 05 (Advanced)**
 
-## Architecture & Tech Stack
+<p align="center">
+  <img src="assets/screenshots/shopora-screen-1.jpeg" width="240" alt="Shopora app screenshot 1" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/screenshots/shopora-screen-2.jpeg" width="240" alt="Shopora app screenshot 2" />
+</p>
 
-- **Framework**: Flutter 3.16+ / Dart 3.2+
-- **State Management**: `provider` (ChangeNotifier architecture with `ProductProvider`, `CartProvider`, `WishlistProvider`, `ThemeProvider`)
-- **Networking**: `http` with resilient error handling, status code checks, timeout guards, and in-memory caching
-- **Local Persistence**: `shared_preferences` for cart items, wishlist favorites, theme mode, and order history
-- **Image Caching & Fallbacks**: `cached_network_image` with shimmer skeleton placeholders
-- **Design System**: Material 3, Google Fonts (`Plus Jakarta Sans` & `Outfit`), high-contrast accessible Light & Dark themes
-- **Target Platforms**: Android, iOS, and Flutter Web
+<p align="center">
+  <strong>Discover products. Manage your cart. Shop in style.</strong>
+</p>
 
----
+## Project Badges
 
-## Project Structure
+![Flutter](https://img.shields.io/badge/Flutter-Framework-02569B?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-Language-0175C2?logo=dart&logoColor=white)
+![API](https://img.shields.io/badge/API-FakeStore-2E8B57)
+![Tests](https://img.shields.io/badge/Automated_Tests-15_Passing-2E8B57)
+![Analysis](https://img.shields.io/badge/Flutter_Analyze-No_Issues-2E8B57)
 
-```
-flutter_shopora/
-├── pubspec.yaml
-├── lib/
-│   ├── main.dart
-│   ├── app.dart
-│   ├── core/
-│   │   ├── constants/
-│   │   │   └── app_constants.dart
-│   │   ├── theme/
-│   │   │   ├── app_theme.dart
-│   │   │   └── theme_provider.dart
-│   │   └── utils/
-│   │       └── formatters.dart
-│   ├── models/
-│   │   ├── product.dart
-│   │   ├── cart_item.dart
-│   │   └── order.dart
-│   ├── services/
-│   │   ├── product_api_service.dart
-│   │   └── local_storage_service.dart
-│   ├── repositories/
-│   │   └── product_repository.dart
-│   ├── providers/
-│   │   ├── product_provider.dart
-│   │   ├── cart_provider.dart
-│   │   └── wishlist_provider.dart
-│   ├── screens/
-│   │   ├── home/
-│   │   │   └── home_screen.dart
-│   │   ├── catalog/
-│   │   │   └── catalog_screen.dart
-│   │   ├── product_details/
-│   │   │   └── product_details_screen.dart
-│   │   ├── search/
-│   │   │   └── search_filter_screen.dart
-│   │   ├── cart/
-│   │   │   └── cart_screen.dart
-│   │   ├── checkout/
-│   │   │   └── checkout_screen.dart
-│   │   ├── wishlist/
-│   │   │   └── wishlist_screen.dart
-│   │   └── profile/
-│   │       └── profile_screen.dart
-│   └── widgets/
-│       ├── product_card.dart
-│       ├── category_chip.dart
-│       ├── loading_skeleton.dart
-│       ├── empty_state.dart
-│       └── error_state.dart
-└── test/
-    ├── cart_test.dart
-    ├── product_test.dart
-    └── filter_test.dart
-```
+## Features
 
----
+- **Product catalogue** — Browse products loaded from the FakeStore API.
+- **Search** — Find products by name and relevant details.
+- **Category browsing** — Explore products by category.
+- **Filtering and sorting** — Refine the catalogue using available price filters and sorting options.
+- **Product details** — View product information before adding an item to the cart.
+- **Shopping cart** — Manage cart items and quantities and review totals.
+- **Wishlist** — Save products for later.
+- **Theme preferences** — Switch between light and dark themes.
+- **Local persistence** — Keep supported cart, wishlist, theme, and order-history data between app sessions.
+- **Checkout flow** — Explore the app's simulated checkout experience without processing real payments.
+- **Responsive interface** — Flutter UI designed for supported mobile and web layouts.
 
-## How to Run in VS Code / Terminal
+## Technology Stack
 
-### 1. Prerequisites
-- Install Flutter SDK (version 3.16 or higher).
-- Install VS Code with Flutter and Dart extensions.
-- An active Android Emulator, iOS Simulator, or Chrome browser.
+| Technology | Purpose |
+|---|---|
+| Flutter | Cross-platform user interface |
+| Dart | Application logic |
+| FakeStore API | Product and category data |
+| Provider | State management |
+| `http` | API requests |
+| `shared_preferences` | Local preference and supported shopping-data persistence |
+| `cached_network_image` | Network product images |
+| Material 3 | UI components and visual styling |
+| Google Fonts | Typography |
 
-### 2. Setup Dependencies (PowerShell or Bash)
+## Getting Started
+
+### Prerequisites
+
+- Flutter SDK installed and configured
+- Dart SDK compatible with the project's Flutter SDK
+- Android emulator, physical device, or supported desktop browser
+- Internet connection for product API requests
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/SilvaDeShakila/shopora-premium-ecommerce.git
+   ```
+
+2. Open the project directory:
+
+   ```bash
+   cd shopora-premium-ecommerce/flutter_shopora
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   flutter pub get
+   ```
+
+4. Run the application:
+
+   ```bash
+   flutter run
+   ```
+
+To run in Chrome, use:
+
 ```bash
-cd flutter_shopora
-flutter pub get
+flutter run -d chrome
 ```
 
-### 3. Run the Unit Test Suite
+## Testing and Code Quality
+
+Run the automated test suite:
+
 ```bash
 flutter test
 ```
 
-### 4. Run the Application
-```bash
-# Run on connected phone/emulator
-flutter run
+Run static analysis:
 
-# Or run explicitly on Chrome (Flutter Web)
-flutter run -d chrome
+```bash
+flutter analyze
 ```
+
+### Verified results
+
+- **15 automated tests passed** in the latest recorded test run.
+- **No issues found** in the latest recorded Flutter analysis.
+- The automated suite covers product models, cart logic, category/filter/sorting logic, and a navigation smoke test.
+- The app has also been manually exercised on a physical phone.
+
+The navigation smoke test is not a full end-to-end test of every shopping flow. API availability and simulated checkout behaviour can vary by environment.
+
+## API
+
+Shopora uses the [FakeStore API](https://fakestoreapi.com/) to retrieve product and category data. An internet connection is required for API-backed catalogue features.
+
+## Project Structure
+
+```text
+flutter_shopora/
+├── android/
+├── ios/
+├── web/
+├── assets/
+│   └── screenshots/
+│       ├── shopora-screen-1.jpeg
+│       └── shopora-screen-2.jpeg
+├── lib/
+│   ├── core/
+│   │   └── constants/
+│   ├── models/
+│   ├── providers/
+│   ├── screens/
+│   ├── services/
+│   └── widgets/
+├── test/
+├── pubspec.yaml
+└── README.md
+```
+
+This is a high-level overview; the exact folders and files in the repository are authoritative.
+
+## Important Notes
+
+- Checkout is a demonstration flow; no real payment is collected.
+- Product availability and data depend on the external FakeStore API.
+- Local persistence depends on the platform and storage implementation.
+
+## Author
+
+**Shakila Silva**
+
+Developed as part of the Auspify internship assignment.
 
 ---
 
-## Manual QA Verification Checklist
-
-| Feature | Action | Expected Result |
-|---|---|---|
-| **API Loading** | App launch | Fetches 20 products and categories from FakeStore API; shows loading skeletons during fetch. |
-| **Search** | Type "jacket" or "gold" | Live instant filtering by title & description (case-insensitive). |
-| **Categories** | Tap "electronics" or "jewelery" | Products immediately filter to selected category with highlighted chip. |
-| **Price Filter** | Drag slider in bottom sheet | Only products within min/max boundaries are displayed. |
-| **Sorting** | Select "Price: Low to High" | Products correctly order from cheapest to most expensive. |
-| **Product Details** | Tap any product card | Opens full details with high-res image, price, rating, quantity stepper, and related products. |
-| **Cart Operations** | Add items, change quantity, delete | Cart count badge increments; subtotal, 8% tax, and shipping update dynamically. |
-| **Cart Persistence** | Restart app / reload | Cart items and quantities remain intact from SharedPreferences. |
-| **Wishlist** | Tap heart icon on card or details | Toggles favorite state, adds to dedicated wishlist screen, persists locally. |
-| **Theme Switching** | Tap Sun/Moon in top bar or profile | Entire app switches seamlessly between Light & Dark themes; persists selection. |
-| **Simulated Checkout** | Fill checkout form & submit | Validates required fields, generates simulated reference `SHP-2026-XXXXX`, clears cart, adds to order history. |
+<p align="center">
+  <strong>Shopora — Curated Modern Living</strong>
+</p>
