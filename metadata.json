@@ -1,0 +1,6 @@
+{
+  "name": "Shopora - Premium E-Commerce App",
+  "description": "A premium Flutter & Web E-Commerce shopping application with live FakeStore API integration, cart, wishlist, dynamic filters, dark mode, and complete Flutter project suite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

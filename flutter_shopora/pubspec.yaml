@@ -1,0 +1,47 @@
+name: shopora
+description: "Shopora - Premium E-Commerce Shopping Application (Task 05 Advanced)"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  provider: ^6.1.2
+
+  # Networking & REST API
+  http: ^1.2.0
+
+  # Local Persistence
+  shared_preferences: ^2.2.2
+
+  # Image Caching & Fallbacks
+  cached_network_image: ^3.3.1
+
+  # Typography
+  google_fonts: ^6.1.0
+
+  # Formatting (Currency, Dates)
+  intl: ^0.19.0
+
+  # Loading Shimmer Effect
+  shimmer: ^3.0.0
+
+  # Icons
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
