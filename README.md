@@ -1,10 +1,26 @@
 # Shopora - Premium Flutter E-Commerce Shopping App
 **Task 05 (Advanced) – Internship Assignment Submission**
 
-Shopora is a production-quality, modern cross-platform shopping application built with **Flutter** and **Dart**, powered by live REST data from [Fake Store API](https://fakestoreapi.com/).
 
+## Project Badges
+
+![Flutter](https://img.shields.io/badge/Flutter-Framework-02569B?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-Language-0175C2?logo=dart&logoColor=white)
+![API](https://img.shields.io/badge/API-FakeStore-2E8B57)
+![Tests](https://img.shields.io/badge/Automated_Tests-15_Passing-2E8B57)
+![Analysis](https://img.shields.io/badge/Flutter_Analyze-No_Issues-2E8B57)
+
+
+Shopora is a production-quality, modern cross-platform shopping application built with **Flutter** and **Dart**, powered by live REST data from [Fake Store API](https://fakestoreapi.com/).
 ---
 
+<p align="center">
+  <img src="flutter_shopora/assets/screenshots/shopora-screen-1.jpeg" width="240" alt="Shopora app screenshot 1" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="flutter_shopora/assets/screenshots/shopora-screen-2.jpeg" width="240" alt="Shopora app screenshot 2" />
+</p>
+
+---
 ## Architecture & Tech Stack
 
 - **Framework**: Flutter 3.16+ / Dart 3.2+
