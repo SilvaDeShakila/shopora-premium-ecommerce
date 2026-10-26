@@ -1,6 +1,4 @@
 # Shopora - Premium Flutter E-Commerce Shopping App
-**Task 05 (Advanced) – Internship Assignment Submission**
-
 
 ## Project Badges
 
